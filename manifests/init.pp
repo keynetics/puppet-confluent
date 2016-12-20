@@ -9,6 +9,9 @@ class confluent (
   $schema_registry                      = false,
   $kafka_rest                           = false,
 
+  #repo management
+  $manage_package_repo                  = true,
+
   #specific tuning, JVM/JMX and propertyfiles in particular
   $kafka_server_opts                    = '', #For instance, JVM options, excluding JVM opts
   $kafka_server_heap_opts               = '',
@@ -37,6 +40,7 @@ class confluent (
   $connect_avro_distributed_properties  = {},
   $connect_avro_standalone_properties   = {},
   $schema_registry_log4j_properties     = {},
+  $manage_repo                          = {},
 ) {
 
   #Not exepected to change
