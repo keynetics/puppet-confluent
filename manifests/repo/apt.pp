@@ -13,11 +13,11 @@ class confluent::repo::apt {
       mode    => '0644',
       notify  => Exec['repo update'],
     }
-
-    exec { 'repo update':
-      path        => '/usr/sbin:/usr/bin:/sbin:/bin',
-      command     => 'apt-get -y update',
-      refreshonly => true,
-    }
   }
+  exec { 'repo update':
+    path        => '/usr/sbin:/usr/bin:/sbin:/bin',
+    command     => 'apt-get -y update',
+    refreshonly => true,
+  }
+  
 }
